@@ -7,6 +7,10 @@
 # @date 2015/12/06 (last revision)
 # @version 1.0
 
+function isnum(x) {
+    return x == x+0
+}
+
 BEGIN {
     if (cmd == "version") {
         print "Enum Lookup, enum v1.0"
@@ -16,7 +20,7 @@ BEGIN {
     }
     if (cmd == "help") {
         print "Look-up a value from a generated C enumeration header file"
-        print
+        print ""
         print "Usage: enum -v key=value InputFiles"
         print "       enum -v cmd=help"
         print "       enum -v cmd=version"
@@ -28,18 +32,26 @@ BEGIN {
 }
 
 FNR == 1 {
-    i = 0
+    idx = 0     # reset the index of enumeration
 }
 
 /^    \w/ {
     if ($3 == "") {
-        tbl[$2] = i
-        tbl[i] = tbl[i] $2 "\n"
-        ++i
+        tbl[$2] = idx
+        tbl[idx] = tbl[idx] $2 "\n"
+        ++idx
     }
     else {
-        tbl[$2] = tbl[$3]
-        tbl[tbl[$3]] = tbl[tbl[$3]] $2 "\n"
+        if (isnum($3)) {
+            idx = $3
+            tbl[$2] = idx
+            tbl[idx] = tbl[idx] $2 "\n"
+            ++idx
+        }
+        else {
+            tbl[$2] = tbl[$3]
+            tbl[tbl[$3]] = tbl[tbl[$3]] $2 "\n"
+        }
     }
 }
 
