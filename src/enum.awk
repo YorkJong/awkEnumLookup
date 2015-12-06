@@ -32,11 +32,11 @@ BEGIN {
 }
 
 /enum[[:space:]]*{/, /}/ {
-    if ($0 ~ /enum[[:space:]]*{/)
+    if (/enum[[:space:]]*{/)
         next
-    if ($0 ~ /}/)
+    if (/}/)
         next
-    if ($0 !~ /^[[:alpha:]_]/)
+    if (!/^[[:alpha:]_]/)
         next
 
     if (isnum($2)) {
