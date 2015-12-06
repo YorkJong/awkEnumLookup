@@ -8,9 +8,10 @@
 # @version 1.0
 
 function isnum(x) {
-    return (x ~ /^[ \t]*[0-9]+[ \t]*$/) ||
-           (x ~ /^[ \t]*0[xX][0-9a-fA-F]+[ \t]*$/)
+    return (x ~ /^[[:space:]]*[[:digit:]]+[[:space:]]*$/) ||
+           (x ~ /^[[:space:]]*0[xX][[:xdigit:]]+[[:space:]]*$/)
 }
+
 
 BEGIN {
     if (cmd == "version") {
@@ -28,20 +29,20 @@ BEGIN {
         exit
     }
 
-    FS = "[ \t]+|[ \t]*=[ \t]*"
+    FS = "[[:space:]]+|[[:space:]]*=[[:space:]]*"
     RS = ",\n|\n"
 }
 
-/enum[ \t]*{/ {
+/enum[[:space:]]*{/ {
     idx = 0     # reset the index of enumeration
 }
 
-/enum[ \t]*{/, /}/ {
-    if ($0 ~ /enum[ \t]*{/)
+/enum[[:space:]]*{/, /}/ {
+    if ($0 ~ /enum[[:space:]]*{/)
         next
     if ($0 ~ /}/)
         next
-    if ($0 !~ /^[ \t]+\w/)
+    if ($0 !~ /^[[:space:]]+[[:alpha:]]/)
         next
 
     if (isnum($3)) {
