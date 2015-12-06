@@ -9,7 +9,7 @@
 BEGIN {
     if (cmd == "version") {
         print "Enum Lookup, enum v2.0"
-        print "         Jiang Yu-Kuan <york_jiang@mars-semi.com.tw>"
+        print "         Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
         print "         2015/12/06"
         exit
     }
