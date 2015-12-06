@@ -7,12 +7,6 @@
 # @date 2015/12/06 (last revision)
 # @version 1.0
 
-function isnum(x) {
-    return (x ~ /^[[:space:]]*[[:digit:]]+[[:space:]]*$/) ||
-           (x ~ /^[[:space:]]*0[xX][[:xdigit:]]+[[:space:]]*$/)
-}
-
-
 BEGIN {
     if (cmd == "version") {
         print "Enum Lookup, enum v1.0"
@@ -64,3 +58,17 @@ BEGIN {
 END {
     printf tbl[key]
 }
+
+
+#-------------------------------------------------------------------------------
+# Help Functions
+#-------------------------------------------------------------------------------
+
+function isnum(x) {
+    return (x ~ /^[[:space:]]*[[:digit:]]+[[:space:]]*$/) ||
+           (x ~ /^[[:space:]]*0[xX][[:xdigit:]]+[[:space:]]*$/)
+}
+
+
+#-------------------------------------------------------------------------------
+
