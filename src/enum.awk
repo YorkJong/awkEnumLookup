@@ -8,7 +8,8 @@
 # @version 1.0
 
 function isnum(x) {
-    return x == x+0
+    return (x ~ /^[ \t]*[0-9]+[ \t]*$/) ||
+           (x ~ /^[ \t]*0[xX][0-9a-fA-F]+[ \t]*$/)
 }
 
 BEGIN {
@@ -27,31 +28,35 @@ BEGIN {
         exit
     }
 
-    FS = " +| *= *"
+    FS = "[ \t]+|[ \t]*=[ \t]*"
     RS = ",\n|\n"
 }
 
-FNR == 1 {
+/enum[ \t]*{/ {
     idx = 0     # reset the index of enumeration
 }
 
-/^    \w/ {
+/enum[ \t]*{/, /}/ {
+    if ($0 ~ /enum[ \t]*{/)
+        next
+    if ($0 ~ /}/)
+        next
+    if ($0 !~ /^[ \t]+\w/)
+        next
+
+    if (isnum($3)) {
+        idx = $3
+        $3 = ""
+    }
+
     if ($3 == "") {
         tbl[$2] = idx
         tbl[idx] = tbl[idx] $2 "\n"
         ++idx
     }
     else {
-        if (isnum($3)) {
-            idx = $3
-            tbl[$2] = idx
-            tbl[idx] = tbl[idx] $2 "\n"
-            ++idx
-        }
-        else {
-            tbl[$2] = tbl[$3]
-            tbl[tbl[$3]] = tbl[tbl[$3]] $2 "\n"
-        }
+        tbl[$2] = tbl[$3]
+        tbl[tbl[$3]] = tbl[tbl[$3]] $2 "\n"
     }
 }
 

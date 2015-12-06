@@ -8,12 +8,10 @@
 /** IDs of Layout */
 typedef enum {
     LAY_LiveView_Bg,
-    LAY_LiveViewSingle_Background,
+    LAY_LiveViewSingle_Background = 10,
     LAY_LiveViewSingle_Button,
     LAY_LiveViewSingle_ButtonTouch,
-    LAY_LiveViewPIP_Bg,
-    LAY_LiveViewPIP_Background,
-    LAY_LiveViewPIP_Button,
+    //LAY_LiveViewPIP_Bg,
     LAY_End,
     LAY_Total = LAY_End
 } LayoutID;
