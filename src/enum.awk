@@ -8,7 +8,7 @@
 
 BEGIN {
     if (cmd == "version") {
-        print "Enum Lookup, enum v1.0"
+        print "Enum Lookup, enum v2.0"
         print "         Jiang Yu-Kuan <york_jiang@mars-semi.com.tw>"
         print "         2015/12/06"
         exit
@@ -23,8 +23,8 @@ BEGIN {
         exit
     }
 
-    FS = "[[:space:]]+|[[:space:]]*=[[:space:]]*"
-    RS = ",\n|\n"
+    FS = "[[:space:]]*=[[:space:]]*"
+    RS = "[,\n][[:space:]]*"
 }
 
 /enum[[:space:]]*{/ {
@@ -36,22 +36,22 @@ BEGIN {
         next
     if ($0 ~ /}/)
         next
-    if ($0 !~ /^[[:space:]]+[[:alpha:]]/)
+    if ($0 !~ /^[[:alpha:]_]/)
         next
 
-    if (isnum($3)) {
-        idx = $3
-        $3 = ""
+    if (isnum($2)) {
+        idx = $2
+        $2 = ""
     }
 
-    if ($3 == "") {
-        tbl[$2] = idx
-        tbl[idx] = tbl[idx] $2 "\n"
+    if ($2 == "") {
+        tbl[$1] = idx
+        tbl[idx] = tbl[idx] $1 "\n"
         ++idx
     }
     else {
-        tbl[$2] = tbl[$3]
-        tbl[tbl[$3]] = tbl[tbl[$3]] $2 "\n"
+        tbl[$1] = tbl[$2]
+        tbl[tbl[$2]] = tbl[tbl[$2]] $1 "\n"
     }
 }
 
