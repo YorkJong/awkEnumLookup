@@ -18,7 +18,7 @@ if "%file_lst%" == "" (
 )
 
 :LOOP
-set /p "key=Enter the Index: "
+set /p "key=Enter the Key: "
 if "%key%"=="" goto END
 
 ::FOR %%A IN (%file_lst%) DO (
