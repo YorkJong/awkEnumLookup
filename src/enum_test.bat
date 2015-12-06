@@ -31,5 +31,3 @@ set key=
 goto LOOP
 
 :END
-
-pause
