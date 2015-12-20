@@ -27,7 +27,7 @@ BEGIN {
         version()
         exit
     }
-    if (cmd == "help") {
+    if ((cmd == "help") || (key == "")) {
         help()
         exit
     }
