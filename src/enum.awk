@@ -23,9 +23,6 @@ function help() {
 
 
 BEGIN {
-    if ((key == "") && (cmd == ""))
-        cmd = "help"
-
     if (cmd == "version") {
         version()
         exit
