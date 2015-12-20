@@ -3,23 +3,35 @@
 #
 # @author Jiang Yu-Kuan <yukuan.jiang@gmail.com>
 # @date 2015/12/03 (initial version)
-# @date 2015/12/06 (last revision)
+# @date 2015/12/20 (last revision)
 # @version 2.0
 
+function version() {
+    print "Enum Lookup, enum v2.0"
+    print "         Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
+    print "         2015/12/20"
+}
+
+function help() {
+    print "Look-up a name or a value from C files with enumeration",
+          "declarations."
+    print ""
+    print "Usage: enum -v key=value InputFiles"
+    print "       enum -v cmd=help"
+    print "       enum -v cmd=version"
+}
+
+
 BEGIN {
+    if ((key == "") && (cmd == ""))
+        cmd = "help"
+
     if (cmd == "version") {
-        print "Enum Lookup, enum v2.0"
-        print "         Jiang Yu-Kuan <yukuan.jiang@gmail.com>"
-        print "         2015/12/06"
+        version()
         exit
     }
     if (cmd == "help") {
-        print "Look-up a name or a value from C files with enumeration",
-              "declarations."
-        print ""
-        print "Usage: enum -v key=value InputFiles"
-        print "       enum -v cmd=help"
-        print "       enum -v cmd=version"
+        help()
         exit
     }
 
