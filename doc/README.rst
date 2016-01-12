@@ -6,21 +6,31 @@ Enum Lookup
 -----------
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0004
+:Revision: 0005
 :Date: 2016-01-12
+
 
 Introduction
 ============
 Look-up a name or a value from C files with enumeration declarations.
 
+
 Install
 =======
-1. Download the compressed binary package file from the Download page
+1. Download the compressed binary package file (e.g., enum-lookup-bin-v2.0.7z) from
+   the [https://bitbucket.org/YorkJong/enum-lookup/downloads Download] page
 2. Uncompress the package
 3. Copy enum.exe and enum.bat to a directory containing C header files, or
    copy C header files to the directory containing enum.exe and enum.bat
-4. Run the enum.bat
-5. Key in a ID or a number to look-up
+4. Execute the enum.bat
+
+
+Usage
+=====
+1. Execute the enum.bat
+2. Key in a number to look-up corresponding enumerated names;
+   key in a enumerated name to look-up its corresponding number.
+
 
 Command Line
 ============
