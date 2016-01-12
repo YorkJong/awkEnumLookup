@@ -6,7 +6,7 @@ Enum Lookup
 -----------
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0003
+:Revision: 0004
 :Date: 2016-01-12
 
 Introduction
@@ -23,7 +23,8 @@ Install
 
 Command Line
 ============
-| Usage: enum.exe -v key=value InputFiles
-|        enum.exe -v cmd=help
-|        enum.exe -v cmd=version
+::
 
+ Usage: enum.exe -v key=value InputFiles
+        enum.exe -v cmd=help
+        enum.exe -v cmd=version
