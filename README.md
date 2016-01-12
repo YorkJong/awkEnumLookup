@@ -6,7 +6,7 @@ Look-up a name or a value from C files with enumeration declarations.
 2. Uncompress the package
 3. Copy enum.exe and enum.bat to your C soruce directory
 4. Run the enum.bat
-5. Key in a ID or a number to look-up
+5. Key in an ID or a number to look-up
 
 # Command Line #
 
