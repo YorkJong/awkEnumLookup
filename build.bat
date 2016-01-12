@@ -7,7 +7,6 @@ if "%target%"=="" (
     set /p "target=Enter the target: "
 )
 
-del %target%.exe
 awka -X -f %src_dir%\%target%.awk
 ren awka.out %target%.exe
 
