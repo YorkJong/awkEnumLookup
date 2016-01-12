@@ -1,6 +1,6 @@
 @echo off
-set enum=awk -f enum.awk
-::set enum=awka -x -f enum.awk --
+set enum=awk -f ..\src\enum.awk
+::set enum=awka -x -f ..\src\enum.awk --
 
 set bat_dir=%~dp0
 cd /D %bat_dir%
