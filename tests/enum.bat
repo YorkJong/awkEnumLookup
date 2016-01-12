@@ -13,7 +13,7 @@ echo ^> Look Up
 
 set file_lst=%1
 if "%file_lst%" == "" (
-    set file_lst=LangID.h LayoutID.h MsgID.h ResID.h
+    set file_lst=*.h
 )
 
 :LOOP
