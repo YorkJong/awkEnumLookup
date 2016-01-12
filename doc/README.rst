@@ -17,8 +17,8 @@ Install
 =======
 1. Download the compressed binary package file from the Download page
 2. Uncompress the package
-3. Copy enum.exe and enum.bat to your C soruce directory, or
-   copy C header file to the directory containing enum.exe and enum.bat
+3. Copy enum.exe and enum.bat to a directory containing C header files, or
+   copy C header files to the directory containing enum.exe and enum.bat
 4. Run the enum.bat
 5. Key in a ID or a number to look-up
 
