@@ -1,9 +1,9 @@
 # @file enum.awk
-# Look-up a name or a value from C files with enumeration declarations.
+# Look-up a name (enumerator) or a value (an integer) of C enumerations.
 #
 # @author Jiang Yu-Kuan <yukuan.jiang@gmail.com>
 # @date 2015/12/03 (initial version)
-# @date 2015/12/20 (last revision)
+# @date 2016/01/13 (last revision)
 # @version 2.0
 
 function version() {
@@ -13,12 +13,11 @@ function version() {
 }
 
 function help() {
-    print "Look-up a name or a value from C files with enumeration",
-          "declarations."
+    print "Look-up a name (enumerator) or a value (an integer) of C enumerations."
     print ""
-    print "Usage: enum -v key=value InputFiles"
-    print "       enum -v cmd=help"
-    print "       enum -v cmd=version"
+    print "Usage: enum.exe -v key=value InputFiles"
+    print "       enum.exe -v cmd=help"
+    print "       enum.exe -v cmd=version"
 }
 
 
