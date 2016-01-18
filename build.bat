@@ -9,6 +9,7 @@ if "%target%"=="" (
 
 awka -X -f %src_dir%\%target%.awk
 ren awka.out %target%.exe
+move %target%.exe bin
 
 del awka_out.c
 
