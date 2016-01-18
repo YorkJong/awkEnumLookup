@@ -6,8 +6,8 @@ Enum Lookup
 -----------
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0008
-:Date: 2016-01-18
+:Revision: 0009
+:Date: 2016-01-19
 
 
 Introduction
@@ -17,10 +17,9 @@ Look-up a name (enumerator) or a value (an integer) of C enumerations.
 
 Install
 =======
-1. Download the compressed binary package file (e.g.,
-   ``EnumLookup-v2.0-bin-20160118.zip``) from the
-   [https://bitbucket.org/YorkJong/awkenumlookup/downloads Download] page.
-2. Uncompress the package
+1. Download a binary distribution (e.g., ``EnumLookup-2.0-bin.zip``) from
+   `Download <https://bitbucket.org/YorkJong/awkenumlookup/downloads>`_ page.
+2. Uncompress the binary distribution.
 3. Copy ``enum.exe`` and ``enum.bat`` to a directory containing C header files, or
    copy C header files to the directory containing ``enum.exe`` and ``enum.bat``
 4. Execute ``enum.bat``
