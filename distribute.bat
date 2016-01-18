@@ -14,16 +14,22 @@ if not exist %dist_dir% (
 )
 set _7z="C:\Program Files\7-Zip\7z.exe"
 
+echo.
+echo =^> Generating the executable file
 cd bin
 call clean.bat
 cd ..
 call build.bat %target% SkipPause
 
+echo.
+echo =^> Copying distributed files
 xcopy /Y bin %dist_dir%\
 del %dist_dir%\%target%_test.bat
 del %dist_dir%\clean.bat
 copy README.md %dist_dir%\README.txt
 
+echo.
+echo =^> Compressing distributed files
 %_7z% a -tzip %dist_dir%.zip %dist_dir%\
 rd /s /q %dist_dir%
 
