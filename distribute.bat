@@ -1,13 +1,13 @@
 @echo off
 
-set ver_num=v2.0
 set target=enum
+set ver_num=v2.0
+set dist_name=EnumLookup
 
-set dist_dir=EnumLookup
 set dy=%date:~0,4%
 set dm=%date:~5,2%
 set dd=%date:~8,2%
-set dist_dir=%dist_dir%-%ver_num%-bin-%dy%%dm%%dd%
+set dist_dir=%dist_name%-%ver_num%-bin-%dy%%dm%%dd%
 
 if not exist %dist_dir% (
     md %dist_dir%
