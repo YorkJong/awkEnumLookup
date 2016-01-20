@@ -8,11 +8,10 @@ Look-up a name (enumerator) or a value (an integer) of C enumerations.
 1. Download a binary distribution (e.g., *EnumLookup-2.0-bin.zip*) from
    [Downloads](https://bitbucket.org/YorkJong/awkenumlookup/downloads) page.
 2. Uncompress the binary distribution.
-3. Put the following file at the same directory
+3. Put the following files at the same directory
     * *enum.exe*
     * *enum.bat*
     * your C header files containing enumerations
-4. Execute *enum.bat*
 
 
 # Usage #
