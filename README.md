@@ -17,8 +17,9 @@ Look-up a name (enumerator) or a value (an integer) of C enumerations.
 # Usage #
 
 1. Execute the *enum.bat*
-2. Key in a number to look-up corresponding names (enumerators);
-   key in a names (enumerators) to look-up its corresponding value (an integer).
+2. Look-up:
+    * Key in a number to look-up corresponding names (enumerators);
+    * Key in a name (enumerator) to look-up corresponding value (an integer).
 
 
 # Command Line #
