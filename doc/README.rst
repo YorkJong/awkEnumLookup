@@ -6,7 +6,7 @@ Enum Lookup
 -----------
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0010
+:Revision: 0011
 :Date: 2016-01-20
 
 
@@ -20,16 +20,18 @@ Install
 1. Download a binary distribution (e.g., *EnumLookup-2.0-bin.zip*) from
    `Downloads <https://bitbucket.org/YorkJong/awkenumlookup/downloads>`_ page.
 2. Uncompress the binary distribution.
-3. Copy *enum.exe* and *enum.bat* to a directory containing C header files, or
-   copy C header files to the directory containing *enum.exe* and *enum.bat*
-4. Execute *enum.bat*
+3. Put the following files at the same directory
+    * *enum.exe*
+    * *enum.bat*
+    * your C header files containing enumerations
 
 
 Usage
 =====
 1. Execute the *enum.bat*
-2. Key in a number to look-up corresponding names (enumerators);
-   key in a names (enumerators) to look-up its corresponding value (an integer).
+2. Look-up:
+    * Key in a number to look-up corresponding names (enumerators);
+    * Key in a name (enumerator) to look-up corresponding value (an integer).
 
 
 Command Line
