@@ -12,7 +12,11 @@ Enum Lookup
 
 Introduction
 ============
-Look-up a name (enumerator) or a value (an integer) of C enumerations.
+EnumLookup is an open source AWK application to look-up a name (enumerator) or
+a value (an integer) of C enumerations.
+
+For the ease of use on Windows, the AWK script is compiled into an EXE manner
+and is wrapped into a batch file.
 
 
 Install
@@ -26,10 +30,11 @@ Install
     * your C header files containing enumerations
 
 
-Usage
-=====
-1. Execute the *enum.bat*
-2. Look-up:
+Getting Started
+===============
+1. Install EnumLookup.
+2. Execute the *enum.bat*.
+3. Look-up:
     * Key in a number to look-up corresponding names (enumerators);
     * Key in a name (enumerator) to look-up corresponding value (an integer).
 
