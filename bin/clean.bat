@@ -1,1 +1,0 @@
-del enum.exe

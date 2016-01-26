@@ -21,7 +21,7 @@ and is wrapped into a batch file.
 ## Getting Started ##
 
 1. Install EnumLookup.
-2. Execute the *enum.bat*
+2. Execute `enum.bat`
 3. Look-up:
     * Key in a number to look-up corresponding names (enumerators);
     * Key in a name (enumerator) to look-up corresponding value (an integer).
