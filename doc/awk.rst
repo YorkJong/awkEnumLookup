@@ -3,8 +3,8 @@ NOTE on AWK and AWKA
 ====================
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0001
-:Date: 2015-12-06
+:Revision: 0002
+:Date: 2017-07-20
 
 .. contents::
 
@@ -28,6 +28,9 @@ How to install AWKA for Windows
       Windows (e.g., C:\MinGW\bin\).
     4. You can test your installation by using the sample batch file:
       "compileAWK.bat" included in this distribituion.
+Note:
+* GnuWin32 Version in https://sourceforge.net/projects/gnuwin32/files/awka/
+  cannot properly running with MinGW
 
 
 How to Get the AWK for Windows
@@ -63,4 +66,18 @@ Problems in the AWKA
         return x+0 == x
     }
 * Do not support \s in the pattern
+  * can replace it with [[:space:]]
+  * support \s in the regexp of sub()
 * Do not support "/dev/stdin" in gawk
+* Cannot get correct result by using regexp "\/\/" or "\/{2}" in sub(), gsub()
+  * The following is an example:
+    a = "///////"
+    sub(/\/\//, "#", a)
+    gsub(/\/\//, "--", a)
+    sub(/-\/\s*$/, "--", a)
+  * To get right result, you can use the code as follows
+    a = "///////"
+    sub(/[\/][\/]/, "#", a)
+    gsub(/[\/][\/]/, "--", a)
+    sub(/-\/\s*$/, "--", a)
+
