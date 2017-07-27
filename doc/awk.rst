@@ -3,7 +3,7 @@ NOTE on AWK and AWKA
 ====================
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0003
+:Revision: 0004
 :Date: 2017-07-27
 
 .. contents::
@@ -50,6 +50,7 @@ Bug in the GAWK
 -------------------------------------------------
 * Cannot recognize \d pattern
 * Cannot recognize FS="||"; must replace it with FS="[|]{2}" or FS="[|][|]"
+* The FILENAME buid-in variable is not supported
 
 3.1.6 (Gawk for Windows, GnuWin32)
 ----------------------------------
@@ -62,6 +63,7 @@ Problems in the AWKA
 ------------------------------------------------
 * GAWK runs *END* rule after executing an *exit* statement, but AWKA don't.
 * The split function is not supported
+* The FILENAME buid-in variable is not supported
 * Cannot properly run this function when x is not a number
     function isnum(x) {
         return x+0 == x
