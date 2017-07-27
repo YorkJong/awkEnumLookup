@@ -3,8 +3,8 @@ NOTE on AWK and AWKA
 ====================
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0002
-:Date: 2017-07-20
+:Revision: 0003
+:Date: 2017-07-27
 
 .. contents::
 
@@ -49,6 +49,7 @@ Bug in the GAWK
 4.1.3 (fom http://www.klabaster.com/freeware.htm)
 -------------------------------------------------
 * Cannot recognize \d pattern
+* Cannot recognize FS="||"; must replace it with FS="[|]{2}" or FS="[|][|]"
 
 3.1.6 (Gawk for Windows, GnuWin32)
 ----------------------------------
@@ -65,9 +66,11 @@ Problems in the AWKA
     function isnum(x) {
         return x+0 == x
     }
-* Do not support \s in the pattern
+* Do not support \s in the pattern of a pattern-action statement
+* Do not support \s in the regexp of match()
   * can replace it with [[:space:]]
-  * support \s in the regexp of sub()
+  * can replace it with [ \t]
+* Support \s in the regexp of sub()
 * Do not support "/dev/stdin" in gawk
 * Cannot get correct result by using regexp "\/\/" or "\/{2}" in sub(), gsub()
   * The following is an example:
@@ -80,4 +83,5 @@ Problems in the AWKA
     sub(/[\/][\/]/, "#", a)
     gsub(/[\/][\/]/, "--", a)
     sub(/-\/\s*$/, "--", a)
+* Cannot recognize FS="||" or FS="[|]{2}"; must replace them with "[|][|]"
 
