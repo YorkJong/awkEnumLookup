@@ -50,7 +50,10 @@ Bug in the GAWK
 -------------------------------------------------
 * Cannot recognize \d pattern
 * Cannot recognize FS="||"; must replace it with FS="[|]{2}" or FS="[|][|]"
-* The FILENAME buid-in variable is not supported
+
+NOTE:
+* Inside a BEGIN rule, the value of FILENAME is "", because there are no input
+  files being processed yet.
 
 3.1.6 (Gawk for Windows, GnuWin32)
 ----------------------------------
@@ -63,7 +66,6 @@ Problems in the AWKA
 ------------------------------------------------
 * GAWK runs *END* rule after executing an *exit* statement, but AWKA don't.
 * The split function is not supported
-* The FILENAME buid-in variable is not supported
 * Cannot properly run this function when x is not a number
     function isnum(x) {
         return x+0 == x
@@ -87,3 +89,6 @@ Problems in the AWKA
     sub(/-\/\s*$/, "--", a)
 * Cannot recognize FS="||" or FS="[|]{2}"; must replace them with "[|][|]"
 
+NOTE:
+* Inside a BEGIN rule, the value of FILENAME is "", because there are no input
+  files being processed yet.
