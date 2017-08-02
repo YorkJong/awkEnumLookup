@@ -3,8 +3,8 @@ NOTE on AWK and AWKA
 ====================
 :Author: Jiang Yu-Kuan
 :Contact: yukuan.jiang@gmail.com
-:Revision: 0004
-:Date: 2017-07-27
+:Revision: 0005
+:Date: 2017-08-02
 
 .. contents::
 
@@ -54,6 +54,9 @@ Bug in the GAWK
 NOTE:
 * Inside a BEGIN rule, the value of FILENAME is "", because there are no input
   files being processed yet.
+* /\*/ is a regexp constant for a literal ‘*’. Only one backslash is needed. To
+  do the same thing with a string, you have to type "\\*".
+  * see https://www.gnu.org/software/gawk/manual/html_node/Computed-Regexps.html
 
 3.1.6 (Gawk for Windows, GnuWin32)
 ----------------------------------
@@ -88,6 +91,8 @@ Problems in the AWKA
     gsub(/[\/][\/]/, "--", a)
     sub(/-\/\s*$/, "--", a)
 * Cannot recognize FS="||" or FS="[|]{2}"; must replace them with "[|][|]"
+* Donot support the following getline usage:
+  * getline nextline < FILENAME
 
 NOTE:
 * Inside a BEGIN rule, the value of FILENAME is "", because there are no input
